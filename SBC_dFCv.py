@@ -16,7 +16,7 @@ def np_pearson_corr(x, y):
 
 def SBC_dFCv_map(data_ts, seed_ts, w_size, w_step, wHamm):
 
-	# Data expected to be in time (rows) by brain vertex/voxel (cols)
+	# Data expected to be in time (rows) by brain locations (cols)
 
 	# Znormalize data
 	data_ts_znorm = scipy.stats.zscore(data_ts,axis=0)
