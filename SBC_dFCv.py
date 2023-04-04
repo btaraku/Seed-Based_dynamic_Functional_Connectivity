@@ -1,3 +1,5 @@
+import os
+import sys
 import numpy as np
 import scipy
 
@@ -16,7 +18,7 @@ def np_pearson_corr(x, y):
 
 def SBC_dFCv_map(data_ts, seed_ts, w_size, w_step, wHamm):
 
-	# Data expected to be in time (rows) by brain locations (cols)
+	# Data expected to be in time (rows) by brain vertex/voxel (cols)
 
 	# Znormalize data
 	data_ts_znorm = scipy.stats.zscore(data_ts,axis=0)
@@ -26,6 +28,7 @@ def SBC_dFCv_map(data_ts, seed_ts, w_size, w_step, wHamm):
 		print("seed and data timepoints do not match")
 		print(seed_ts.size)
 		print(data_ts.shape[0])
+		return None
 
 	# Sliding window parameters
 	n_tps = seed_ts.size
@@ -71,7 +74,7 @@ def SBC_dFCv_map(data_ts, seed_ts, w_size, w_step, wHamm):
 	return dFCv_zcorr
 	
 
-def gen_SBC_dFCv(data_path, seed_path, out_file, w_size, w_step, wHamm=True, transpose=True):
+def gen_SBC_dFCv(data_path, seed_path, out_file, w_size, w_step, wHamm, transpose):
 	
 	# Read timeseries data from data and seed
 	data_ts = np.loadtxt(open(data_path, "rb"), delimiter=",")
@@ -86,3 +89,29 @@ def gen_SBC_dFCv(data_path, seed_path, out_file, w_size, w_step, wHamm=True, tra
 	np.savetxt(out_file, dFCv_map)
 
 
+
+data_path = sys.argv[1]
+seed_path = sys.argv[2]
+out_file = sys.argv[3]
+w_size = int(sys.argv[4])
+w_step = int(sys.argv[5])
+w_type = sys.argv[6]
+doT = sys.argv[7]
+
+if w_type == "Hamm":
+	print("Using Hamming Window")
+	wHamm = True
+elif w_type == "Rect":
+	print("Using Rectangular window")
+	wHamm = False
+else:
+	print("Uknown or unsupported window type: "w_type)
+	print("Using Rectangular window")
+	wHamm = False
+
+if doT == "true":
+	transpose=True
+else:
+	transpose=False
+
+gen_SBC_dFCv(data_path, seed_path, out_file, w_size, w_step, wHamm, transpose)
