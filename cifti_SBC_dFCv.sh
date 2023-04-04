@@ -29,7 +29,7 @@ echo "Running cifti cross correlation"
 wb_command -cifti-cross-correlation ${datadir}${filename}.dtseries.nii ${seed_ts}.sdseries.nii ${outdir}${fc_outname}.dscalar.nii -fisher-z
 
 # Convert cifti to text
-echo "converting cifti to csv"
+echo "converting cifti fMRI timeseries to csv"
 rm ${outdir}${filename}.csv
 wb_command -cifti-convert -to-text ${datadir}${filename}.dtseries.nii ${outdir}${filename}.csv -col-delim ","
 
