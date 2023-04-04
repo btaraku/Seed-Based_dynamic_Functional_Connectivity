@@ -34,7 +34,7 @@ rm ${outdir}${filename}.csv
 wb_command -cifti-convert -to-text ${datadir}${filename}.dtseries.nii ${outdir}${filename}.csv -col-delim ","
 
 # Run dFCv python script
-echo "running python"
+echo "running sliding-window analysis in python"
 python SBC_dFCv.py ${outdir}${filename}.csv ${seed_ts}.txt ${outdir}${dfcv_outname}.txt $Wsize $Wstep $Wtype "true"
 
 # Convert text file back to cifti space using FC map as reference
