@@ -25,7 +25,7 @@ Wstep=$8
 Wtype=$9
 
 # Run standard correlation to get static FC maps
-echo "Running cifti-cross correlation"
+echo "Running cifti cross correlation"
 wb_command -cifti-cross-correlation ${datadir}${filename}.dtseries.nii ${seed_ts}.sdseries.nii ${outdir}${fc_outname}.dscalar.nii -fisher-z
 
 # Convert cifti to text
