@@ -5,6 +5,7 @@ import scipy
 
 
 def np_pearson_corr(x, y):
+	# Fast computation for Pearson Correlation Coefficient
 	# Credit to:
 	# https://cancerdatascience.org/blog/posts/pearson-correlation/
 	xv = x - x.mean(axis=0)
