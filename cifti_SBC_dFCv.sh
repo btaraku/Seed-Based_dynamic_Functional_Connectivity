@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### Inputs ###
-# datadir: directory where resting-state fMRI timeseries can be found
+# datadir: directory where preprocessed fMRI timeseries can be found
 # filename: name of fMRI file to be analyzed
 # seed_ts: location of where seed timeseries data can be found
 # 	Expects to find seed timeseries in both .txt and .sdseries.nii
