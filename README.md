@@ -2,7 +2,8 @@
 
 Requires Python >= 3.6, NumPy, SciPy
 
-Used to compute dynamic Functional Connectivty variability maps (dFCv), given preprocessed fMRI timeseries data and a seed timeseries. 
+Used to compute dynamic Functional Connectivty variability (dFCv) maps, given preprocessed fMRI timeseries data and a seed timeseries. dFCv is defined
+as the standard deviation of Seed-Based Functional Connectivty maps, calculated from a sliding-windows analysis.
 
 Works directly on CIFTI data from the Human Connectome Project (HCP)(https://www.humanconnectome.org/software/workbench-command/-cifti-help), 
 which is done by first converting the fMRI timeseries to text, and running a sliding-windows analysis in Python. After running the sliding-windows
