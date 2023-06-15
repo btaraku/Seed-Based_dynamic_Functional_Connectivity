@@ -18,3 +18,5 @@ deviation is calculated across all FC maps to produce dFCv maps. dFCv maps are c
 calculated using HCP workbench.
 
 Python code can also be run using any fMRI file type that can be converted to text.
+
+Inspired by code DPABI Temporal Dynamics Toolbox https://rfmri.org/dpabi
