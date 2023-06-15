@@ -19,4 +19,4 @@ calculated using HCP workbench.
 
 Python code can also be run using any fMRI file type that can be converted to text.
 
-Inspired by code DPABI Temporal Dynamics Toolbox https://rfmri.org/dpabi
+Inspired by code from the DPABI toolbox https://rfmri.org/dpabi (Temporal Dynamics Analysis)
