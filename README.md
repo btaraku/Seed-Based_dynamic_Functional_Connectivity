@@ -19,4 +19,4 @@ CIFTI template, calculated using HCP workbench.
 
 Python code can also be run using any fMRI file type that can be converted into a 2D matrix.
 
-Inspired by code from the DPABI toolbox https://rfmri.org/dpabi (Temporal Dynamics Analysis)
+Inspired by and validated with code from the DPABI toolbox https://rfmri.org/dpabi (Temporal Dynamics Analysis)
